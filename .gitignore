@@ -1,3 +1,5 @@
 a.out
 lex.yy.c
 .vscode
+input.txt
+output.txt

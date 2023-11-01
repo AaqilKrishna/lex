@@ -1,17 +1,27 @@
 %{
-    int words = 0;
+int words = 0;
 %}
 
 %%
 [a-zA-Z]+ words++;
-[\n] {
-        printf("Number of words: %d\n", words);
-        return 0;
-    }
+. ;
 %%
 
+int yywrap(void) {
+    FILE *output_file = fopen("output.txt", "w");
+    if (!output_file) {
+        perror("Error opening output file");
+        return 0;
+    }
+
+    fprintf(output_file, "Number of words: %d\n", words);
+    
+    fclose(output_file);
+
+    return 1;
+}
+
 int main() {
-    printf("\nEnter string: ");
     yylex();
     return 0;
 }
