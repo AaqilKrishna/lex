@@ -15,13 +15,13 @@ int pan_first_alpha[26] = {0};
     validAadhar++;
     char temp[5] = {yytext[0], yytext[1], yytext[2], yytext[3], '\0'};
     int state_code = atoi(temp);
-    aadhar_state[state_code] += 1;
+    aadhar_state[state_code]++;
 }
 
 {capLetter}{capLetter}{capLetter}{capLetter}{capLetter}{digit}{digit}{digit}{digit}{capLetter} {
     validPan++;
     int alpha = yytext[0] - 'A';
-    pan_first_alpha[alpha] += 1;
+    pan_first_alpha[alpha]++;
 }
 
 ({digit})*[ ]({digit})*[ ]({digit})* inValidAadhar++;
@@ -67,4 +67,6 @@ int main() {
 
     fclose(yyin);
     fclose(yyout);
+
+    return 0;
 }

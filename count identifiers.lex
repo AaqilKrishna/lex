@@ -7,7 +7,9 @@ int count = 0;
 
 %%
 {letter}({letter}|{digit})* count++;
+
 {digit}({letter}|{digit})* ;
+
 %%
 
 int yywrap(void) {

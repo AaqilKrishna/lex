@@ -4,7 +4,11 @@ int words = 0;
 
 %%
 [a-zA-Z]+ words++;
+
 . ;
+
+[\n] ;
+
 %%
 
 int yywrap(void) {

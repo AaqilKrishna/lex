@@ -9,11 +9,17 @@ int newLine = 0;
 
 %%
 [ ] space++;
+
 [a-z] small++;
+
 [A-Z] cap++;
+
 [0-9] num++;
+
 [\t] tab++;
+
 [\n] newLine++;
+
 %%
 
 int yywrap(void) {

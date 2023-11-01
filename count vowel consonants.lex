@@ -7,8 +7,11 @@ int nconsonant = 0;
 
 %%
 {vowel} nvowel++;
+
 [a-zA-Z] nconsonant++;
+
 . ;
+
 %%
 
 int yywrap() {

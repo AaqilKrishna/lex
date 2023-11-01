@@ -7,7 +7,7 @@ int nline = 0;
 %}
 
 %%
-\n {
+[\n] {
     nline++;
     nchar++;
 }
@@ -18,6 +18,7 @@ int nline = 0;
 }
 
 . nchar++;
+
 %%
 
 int yywrap() {
