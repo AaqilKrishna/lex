@@ -1,19 +1,19 @@
 %{
-int space = 0;
-int small = 0;
-int cap = 0;
-int tab = 0;
-int num = 0;
-int newLine = 0;
+    int space = 0;
+    int small = 0;
+    int cap = 0;
+    int tab = 0;
+    int num = 0;
+    int newLine = 0;
 %}
 
 %%
-[ ] space++;
-[a-z] small++;
-[A-Z] cap++;
-[0-9] num++;
-[\t] tab++;
-[\n] newLine++;
+    [ ] space++;
+    [a-z] small++;
+    [A-Z] cap++;
+    [0-9] num++;
+    [\t] tab++;
+    [\n] newLine++;
 %%
 
 int main() {
